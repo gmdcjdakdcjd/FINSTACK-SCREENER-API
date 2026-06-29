@@ -1,0 +1,38 @@
+# Python 컴파일 파일 및 캐시 캐싱 방지
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 파이썬 가상환경 (Virtual Environments)
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# 시스템 설정 및 개발도구 설정 파일
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+
+# 데이터베이스 설정 및 환경변수 민감 키값 파일
+.env
+.env.local
+.env.development
+.env.production
+*.db
+*.sqlite3
+
+# 로그 및 임시 백업 파일
+*.log
+scratch/
+temp/
+tmp/
