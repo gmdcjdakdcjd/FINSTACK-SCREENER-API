@@ -26,3 +26,4 @@ def get_market_cap_ranking(limit_val: int, db: Session) -> list:
     cursor = db.execute(detail_query)
     # 종목 코드 문자열 배열만 추출하여 반환합니다.
     return [row[0] for row in cursor.fetchall()]
+

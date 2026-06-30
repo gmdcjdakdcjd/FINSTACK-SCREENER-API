@@ -28,6 +28,8 @@ venv.bak/
 .env.local
 .env.development
 .env.production
+.env.dev
+.env.real
 *.db
 *.sqlite3
 
