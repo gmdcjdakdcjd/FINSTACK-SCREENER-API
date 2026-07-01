@@ -23,8 +23,9 @@ def run_screener(payload: dict, db: Session = Depends(get_db)):
     print("FastAPI 라우터 수신 종목 코드 풀:", len(codes), "개")
     
     try:
-        # 필터 목록 중에서 _US 접미사를 가진 해외 주식용 조건이 포함되어 있는지 판별합니다.
-        is_us = any(f.endswith("_US") for f in filters)
+        # React payload로부터 market 정보를 획득하고, filters 접미사와 결합하여 미국 주식 여부를 판별합니다.
+        market_val = payload.get("market", "").upper()
+        is_us = (market_val == "US") or any(f.endswith("_US") for f in filters)
         
         # 해외 주식용 조건이 있다면 미국 주식 스크리너 서비스를 호출하고, 그렇지 않다면 국내용을 호출합니다.
         if is_us:
